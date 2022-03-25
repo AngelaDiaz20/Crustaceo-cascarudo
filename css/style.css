@@ -164,6 +164,89 @@ li a.active, li a:hover{
     width: 200px;
 }
 
+
+.boton{
+    margin: 300px 0 0 10px;
+    position: absolute;
+    display: inline-block;
+    padding: 5px 10px;
+    color: #fff;
+    background-color: #fba40367;
+    letter-spacing: 2px;
+    font-size: 16px;
+    text-decoration: none;
+    overflow: hidden;
+    transition: 0.2s;
+    text-shadow: 2px 2px 3px rgba(5, 1, 5, 0.774);
+}
+
+.boton:hover{
+    background: var(--orange-color);
+    box-shadow: 0 0 10px #ccca41, 0 0 40px #ccca41, 0 0 80px #ccca41;
+    transition-delay: 1s;
+}
+
+.boton span{
+    position: absolute;
+    display: block;
+}
+
+#span1{
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--orange-color));
+}
+
+.boton:hover #span1{
+    left: 100%;
+    transition: 1s;
+}
+
+#span3{
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, var(--orange-color));
+}
+
+.boton:hover #span3{
+    right: 100%;
+    transition: 1s;
+    transition-delay: 0.5s;
+}
+
+#span2{
+    top: -100;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, var(--orange-color));
+}
+
+.boton:hover #span2{
+    top: 100%;
+    transition: 1s;
+    transition-delay: 0.25s;
+}
+
+#span4{
+    bottom: -100;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, var(--orange-color));
+}
+
+.boton:hover #span4{
+    bottom: 100%;
+    transition: 1s;
+    transition-delay: 0.75s;
+}
+
+
 button{
     background-color: var(--orange-color);
     border-radius: 8px;
@@ -745,6 +828,79 @@ footer .logo-footer img{
     margin: 10px;
 }
 
+.btn-inicio{
+    position:fixed;
+    width:60px;
+    height:60px;
+    line-height: 63px;
+    bottom:25px;
+    right:25px;
+    background:#EB5CB2;
+    color:#FFF;
+    border-radius:50px;
+    text-align:center;
+    font-size:35px;
+    box-shadow: 0px 1px 10px rgba(241, 75, 233, 0.61);
+    z-index:100;
+    transition: all 300ms ease;
+}
+
+.btn-inicio:hover{
+    background: #63025b;
+}
+
+.video-youtube{
+    width: 90%;
+    height: 315px;
+}
+
+#events{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../img/evento.svg);
+    background-size: cover;
+    background-position-x: -185px;
+    background-color: #EB5CB2;
+}
+
+#video{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.evento-principal p{
+    margin: 0 20px 20px;
+    text-align: justify;
+    background-color: #14151559;
+    border-radius: 5px;
+    padding: 5px;
+    text-shadow: 1px 1px 1px var(--dark-color);
+    backdrop-filter: blur(5px);
+}
+
+.evento-principal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.evento-principal h1{
+    font-family: spongebob;
+    color: var(--orange-color);
+}
+
+#other-events{
+    margin: 20px 0 120px;
+    display: flex;
+    justify-content: center;
+}
+
 
 /*MEDIAS QUERIES-----------------*/
 @media screen and (min-width: 768px){
@@ -767,6 +923,12 @@ footer .logo-footer img{
     .texto-inicio p{
         margin-bottom: 40px;
         font-size: 20px;
+    }
+
+    .boton{
+        margin: 260px 0 0 10px;
+        padding: 10px 18px;
+        font-size: 19px;
     }
 
     .nav-combobs img{
@@ -1019,6 +1181,12 @@ footer .logo-footer img{
         font-size: 20px;
     }
 
+    .boton{
+        margin: 260px 0 0 10px;
+        padding: 15px 25px;
+        font-size: 22px;
+    }
+
     #chef{
         flex-direction: row;
         height: 450px;
@@ -1186,6 +1354,20 @@ footer .logo-footer img{
         border-radius: 2%;
     }
 
+    #video{
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 8%;
+    }
+    
+    .evento-principal{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-right: 40px;
+        width: 50%;
+    }
+
     footer{
         flex-direction: row;
         font-size: 15px;
@@ -1233,27 +1415,13 @@ footer .logo-footer img{
         border-top: none;
     }
 
+    #other-events{
+        width: 100%;
+    }
+
+    #other-events .galery img{
+        width: 30%;
+    }
+
 }
 
-
-
-.btn-inicio{
-    position:fixed;
-    width:60px;
-    height:60px;
-    line-height: 63px;
-    bottom:25px;
-    right:25px;
-    background:#EB5CB2;
-    color:#FFF;
-    border-radius:50px;
-    text-align:center;
-    font-size:35px;
-    box-shadow: 0px 1px 10px rgba(241, 75, 233, 0.61);
-    z-index:100;
-    transition: all 300ms ease;
-}
-
-.btn-inicio:hover{
-    background: #63025b;
-}
