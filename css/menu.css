@@ -1,0 +1,365 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Supermercado+One&display=swap');
+
+:root{
+    --dark-color:#141515;
+    --orange-color:#FBA303;
+    --white-color:#ffffffe7;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family:spongebob;
+    src: url(../img/SpongeBob.ttf);
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    font-family: 'Fredoka', sans-serif;
+    font-size: 17px;
+    min-height: 100%;
+    background-color: var(--dark-color);
+    background-image: url(../img/bg-inicio.svg);
+    color: var(--white-color);
+}
+
+h1, h2, h3{
+    font-family: 'Supermercado One', cursive;
+}
+
+p{
+    text-align: justify;
+}
+
+nav{
+    grid-area: menu;
+}
+
+.art-left{
+    grid-area: left;
+    padding: 10px;
+    border-bottom: 5px dotted var(--orange-color);
+}
+
+.art-middle{
+    grid-area: middle;
+    padding: 0px 10px 10px;
+    border-bottom: 5px dotted var(--orange-color);
+}
+
+.art-right{
+    grid-area: right;
+    padding: 10px;
+}
+
+footer{
+    grid-area: footer;
+}
+
+.container-grid{
+    display: grid;
+    grid-template:"menu" 80px
+                  "left" auto
+                  "middle" auto
+                  "right" auto;
+    text-align: center;
+}
+
+
+nav{
+    background: #2e2e2e;
+    height: 80px;
+    width: 100%;
+    padding: 0 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo{
+    height: 70px;
+}
+nav ul{
+    display: flex;
+    justify-content: center;
+}
+nav ul li{
+    margin: 0 5px;
+    list-style: none;
+}
+nav ul li a{
+    color: #fff;
+    font-size: 18px;
+    font-family: spongebob;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+li a.active, li a:hover{
+    background: #3ea7f2;
+    transition: .5s;
+}
+.checkbtn{
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+}
+#check{
+    display: none;
+}
+
+@keyframes blinker {
+50% {
+    opacity: 0;
+}
+}
+@keyframes hideShow {
+0%, 16.6%, 33.33%, 100% { width: 0; }
+16.66%, 33.3% { width: auto; }
+}
+
+
+/* MEDIAS QUERIES */
+@media (max-width: 1023px){
+    nav ul li a{
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 767px){
+    .checkbtn{
+        display: flex;
+    }
+    nav{
+        padding: 0 30px;
+    }
+    ul{
+        position: absolute;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background-image: url(../img/fondo-de-bikini.png);
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+        flex-direction: column;
+        z-index: 10;
+    }
+    nav ul li{
+        margin: 20px 0;
+        font-family: spongebob;
+    }
+    nav ul li a{
+        font-size: 20px;
+    }
+    li a:hover, li a.active{
+        background: #000090;
+        color: red;
+    }
+    #check:checked ~ ul{
+        left:0;
+    }
+}
+
+.hambu img{
+    width: 70%;
+}
+
+h1{
+    font-family: spongebob;
+    color: var(--orange-color);
+}
+
+.opcion, .entrada{
+    display: flex;
+    align-items: center;
+    background-color: #fba4032c;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    border: 2px groove #fba403bb;
+    backdrop-filter: blur(5px);
+    padding: 8px;
+}
+
+.opcion:hover, .entrada:hover{
+    background-color: #4d3406;
+    transition-duration: 0.3s;
+}
+
+.opcion img{
+    width: 100px;
+}
+
+.opcion p, .entrada p{
+    margin:2px;
+}
+
+.price{
+    margin-top: 3px;
+    color: rgb(224, 13, 224);
+}
+
+.opcion h4, .entrada h4{
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-weight: bold;
+    text-align: left;
+    padding-left: 4px;
+}
+
+.nombre-menu{
+    height: 240px;
+}
+
+.entrada img{
+    height: 60px;
+}
+
+.opcion:hover img, .entrada:hover img{
+    transform: scale(1.1);
+    transition-duration: 0.4s;
+}
+
+.entrada{
+    justify-content: center;
+}
+
+.img-entrada{
+    margin-top: 10px;
+    justify-content: center;
+    width: 150px;
+}
+
+.especiales{
+    margin: 0px 15px;
+    text-align: center;
+    background-image: url(../img/especiales.svg);
+    background-size: cover;
+    padding: 110px 60px 60px;
+    height: 500px;
+    background-repeat: no-repeat;
+}
+
+.especiales h1, .art-left h1, .art-middle h1{
+    font-size: 24px;
+}
+
+.especiales img{
+    height: 120px;
+}
+
+.especiales:hover img{
+    transform: scale(1.1);
+    transition-duration: .3s;
+}
+
+.cucaracha img{
+    height: 150px;
+}
+
+@media screen and (min-width:768px){
+    .container-grid{
+        grid-template-columns: auto auto;
+        grid-template-rows: 80px auto auto;
+        grid-template-areas:"menu menu" 
+                            "left left"
+                            "middle right"
+    }
+
+    .body{
+        font-size: 20px;
+    }
+
+    .art-left{
+        display: flex;
+    }
+
+    .opciones{
+        width: 95%;
+        padding-left: 10px;
+    }
+
+    .hambu{
+        width: 95%;
+        padding-right: 10px;
+    }
+
+    .especiales h1, .art-left h1, .art-middle h1{
+        font-size: 26px;
+    }
+    
+    .especiales img{
+        height: 120px;
+    }
+
+    .art-left{
+        border-bottom: 5px dotted var(--orange-color);
+        border-right: none;
+    }
+
+    .art-middle{
+        border-bottom: none;
+        border-right: 5px dotted var(--orange-color);
+    }
+
+}
+
+
+@media screen and (min-width:1024px){
+    .container-grid{
+        grid-template-columns: 34% auto 30%;
+        grid-template-rows: 80px auto 50px;
+        grid-template-areas:"menu menu menu"
+                            "left middle right"
+                            "footer footer footer"; }
+
+    body{
+        font-size: 19px;
+    }
+
+    .art-left{
+        display: flex;
+        flex-direction: column;
+        border-bottom: none;
+        border-right: 5px dotted var(--orange-color);
+    }
+
+    .opciones{
+        width: 100%;
+        padding-left: 0px;
+    }
+
+    .hambu{
+        width: 100%;
+        padding-right: 0px;
+    }
+
+    .nombre-menu{
+        height: 300px;
+    }
+
+    .especiales h1, .art-left h1, .art-middle h1{
+        font-size: 32px;
+    }
+
+    .especiales{
+        padding: 140px 60px 60px;
+        height: 620px;
+        background-repeat: no-repeat;
+    }
+    
+    .especiales img{
+        height: 200px;
+    }
+
+    .cucaracha img{
+        height: 200px;
+    }
+}
